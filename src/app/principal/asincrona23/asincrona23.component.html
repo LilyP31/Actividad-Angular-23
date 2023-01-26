@@ -1,0 +1,84 @@
+<div class="p-2">
+    <section class="container-sm">
+    <form class="border border-2 border-danger">
+        <h2>EJERCICIO INGRESA UN VALOR</h2>
+        <section>
+          <img class="image rounded mx-auto d-block" src="./assets/mate.png">
+        </section>
+            <section class="valor1">
+                <table class="example-full-width mx-auto" cellspacing="0"><tr>
+                    <td><mat-form-field class="example-full-width">
+                      <mat-label>Ingrese un valor:</mat-label>
+                      <input matInput [(ngModel)]="num1"type="number" name="num1">
+                      
+                    </mat-form-field></td>
+                    
+                  </tr></table>
+            </section>
+    
+            <section>
+                <table class="example-full-width mx-auto" cellspacing="0"><tr>
+                    <td><mat-form-field class="example-full-width">
+                      <mat-label>Ingrese segundo valor:</mat-label>
+                      <input matInput [(ngModel)]="num2" type="number" name="num2" >
+                    </mat-form-field></td>
+                    
+                  </tr></table>
+            </section>
+
+            <section class="slide">
+
+                <mat-slide-toggle class="d-flex justify-content-center" name="resultadoSuma" [(ngModel)]="resultadoSuma">Suma</mat-slide-toggle><br>
+                <mat-slide-toggle class="d-flex justify-content-center" name="resultadoResta"[(ngModel)]="resultadoResta">Resta</mat-slide-toggle><br>
+                <mat-slide-toggle class="d-flex justify-content-center" name="resultadoMultiplicar" [(ngModel)]="resultadoMultiplicar">Multiplicar</mat-slide-toggle><br>
+                <mat-slide-toggle class="d-flex justify-content-center" name="resultadoDividir" [(ngModel)]="resultadoDividir">Dividir</mat-slide-toggle><br>
+                
+            </section>
+
+            <section class="boton d-flex justify-content-center">
+                 <button class="d-flex justify-content-center" mat-raised-button color="warn" (click)="calcular()">Calcular</button>
+            </section>
+    </form>
+   
+</section>
+<section class="d-flex justify-content-center p-4">
+  <section class="">
+    <table class="table table-bordered table-hover text-center">
+      <thead>
+        <tr>
+          <th class="operacion">Operación</th>
+          <th class="resultado">Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="mostrarSuma">
+          <td>Suma</td>
+          <td>{{ num1 + num2 | number:'1.2-2' }}</td>
+        </tr>
+        <tr *ngIf="mostrarResta">
+          <td>Resta</td>
+          <td>{{ num1 - num2 | number:'1.2-2' }}</td>
+        </tr>
+        <tr *ngIf="mostrarMultiplicar">
+          <td>Multiplicar</td>
+          <td>{{ num1 * num2 | number:'1.2-2' }}</td>
+        </tr>
+        <tr *ngIf="mostrarDividir">
+          <td>Dividir</td>
+          <td>{{ num1 / num2 | number:'1.2-2' }}</td>
+        </tr>
+      </tbody>
+  </table>
+</section>
+</section>
+  </div>
+  
+  <!--
+    <section class="">
+    <h3>Resultado:</h3>
+    <p class="d-block" *ngIf="mostrarSuma">Resultado suma: {{ num1 + num2 }}</p>
+    <p *ngIf="mostrarResta">Resultado resta: {{ num1 - num2 }}</p>
+    <p *ngIf="mostrarMultiplicar">Resultado multiplicar: {{ num1 * num2 }}</p>
+    <p *ngIf="mostrarDividir">Resultado dividir: {{ num1 / num2 }}</p> 
+</section>
+  -->

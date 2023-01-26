@@ -1,0 +1,61 @@
+<body class="bg color p-3">
+    <mat-divider></mat-divider>
+    <section>
+    <div class="example-label"></div>
+    <div class="example-button-row bg color2">
+        <div class="example-flex-container">
+        <div class="example-button-container">
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+            <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+        <div class="example-button-container">
+            <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon">
+            <mat-icon>bookmark</mat-icon>
+            </button>
+        </div>
+        <div class="example-button-container">
+            <button routerLink="home" mat-fab color="warn" aria-label="Example icon button with a home icon">
+            <mat-icon routerLink="home">home</mat-icon>
+            </button>
+        </div>
+        <div class="example-button-container">
+            <button routerLink="tabla" mat-fab  aria-label="Example icon button with a heart icon">
+            <mat-icon>favorite</mat-icon>
+            </button>
+        </div>
+        </div>
+    </div>
+    </section>
+    <p></p>
+    <mat-divider></mat-divider>
+    <section class="check color3">
+        <section class="example-section">
+        <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+        <mat-checkbox class="example-margin" [disabled]="true">Disabled</mat-checkbox>
+        </section>
+
+        <section class="example-section">
+        <span class="example-list-section">
+            <mat-checkbox class="example-margin"
+                        [checked]="allComplete"
+                        [color]="task.color"
+                        [indeterminate]="someComplete()"
+                        (change)="setAll($event.checked)">
+            {{task.name}}
+            </mat-checkbox>
+        </span>
+        <span class="example-list-section">
+            <ul>
+            <li *ngFor="let subtask of task.subtasks">
+                <mat-checkbox [(ngModel)]="subtask.completed"
+                            [color]="subtask.color"
+                            (ngModelChange)="updateAllComplete()">
+                {{subtask.name}}
+                </mat-checkbox>
+            </li>
+            </ul>
+        </span>
+        </section>
+    </section>
+</body>

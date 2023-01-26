@@ -1,0 +1,39 @@
+<section class="container p-5">
+
+    <section class="container-sm">
+      <form class="border border-2 border-danger">
+        <h2>Log In</h2>
+        <section>
+          <img class="image rounded mx-auto d-block" src="./assets/chica.jpg">
+        </section>
+      <section class="">
+      <section class="form-group">
+      <label class="text" for="username">Username:</label>
+      <input type="text" class="form-control" id="username">
+      </section>
+      <section class="form-group">
+      <label class="text" for="password">Password:</label>
+      <input type="password" class="form-control" id="password">
+      </section>
+
+      <!-- Angular Material 23 -->
+    <!---<section>
+          <div class="example-container">
+              <mat-form-field appearance="fill">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+              </mat-form-field>
+          </div>    
+      </section>-->
+
+      <section class="p-4">
+        <button class="rounded mx-auto d-block" (click)="login()" value="Login" mat-raised-button color="warn">Enviar</button>
+      </section>
+      </section>
+    </form>
+</section>
+</section>
+<!-- <input class="btn btn-primary" (click)="login()" value="Log in"> -->

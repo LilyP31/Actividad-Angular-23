@@ -1,0 +1,21 @@
+.container-sm{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex: wrap;
+}
+form{
+    width: 30rem;
+    padding: 2rem;
+}
+h2{
+    text-align: center;
+}
+.border{
+    border-radius: 15px;
+}
+.image{
+    width: 40%;
+    border-radius: 35px;
+    padding-bottom: 1rem;
+}
